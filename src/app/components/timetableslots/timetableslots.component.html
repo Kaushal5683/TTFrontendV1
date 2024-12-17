@@ -1,0 +1,41 @@
+<!-- timetableslots.component.html -->
+<div class="container timetable-container">
+  <h1>Timetable's according to Classroom</h1>
+
+  <form [formGroup]="generateForm" (ngSubmit)="generateTimetable()">
+    <div class="form-group">
+      <label for="yearId">Select Year</label>
+      <select id="yearId" formControlName="yearId" class="form-control">
+        <option *ngFor="let year of years" [value]="year.id">
+          Year {{ year.yearNumber }}
+        </option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!generateForm.valid">Generate Timetable</button>
+  </form>
+
+  <div *ngFor="let classroom of getClassrooms()" class="mt-4 display-timetable">
+    <div *ngFor="let timetableNumber of getTimetableNumbers()" class="mt-5">
+      <div *ngIf="timetableNumber != 0">
+        <h2>Timetable No {{ timetableNumber }} for Classroom {{ classroom.classroomNumber }}</h2>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Day \ Slot</th>
+              <th *ngFor="let slot of getSlots()">Slot {{ slot + 1 }}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let day of getDays()">
+              <td>Day {{ day + 1 }}</td>
+              <td *ngFor="let slot of getSlots()">
+                {{ getSubjectForSlot(classroom.id, day, slot, timetableNumber)?.subject?.name }}<br>
+                <small>{{ getSubjectForSlot(classroom.id, day, slot, timetableNumber)?.teacher?.name }}</small>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
