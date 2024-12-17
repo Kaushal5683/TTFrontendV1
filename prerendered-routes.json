@@ -1,0 +1,9 @@
+{
+  "routes": [
+    "/classrooms",
+    "/subjects",
+    "/teachers",
+    "/timetables",
+    "/years"
+  ]
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html><html lang="en" data-critters-container><head><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset="utf-8">
+  <title>Automatic Timetable Generator</title>
+  <base href="https://kaushal5683.github.io/TTFrontendV1">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOlCnqEu92Fr1MmSU5fCRc4EsA.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOlCnqEu92Fr1MmSU5fABc4EsA.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOlCnqEu92Fr1MmSU5fCBc4EsA.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOlCnqEu92Fr1MmSU5fBxc4EsA.woff2) format('woff2');unicode-range:U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOlCnqEu92Fr1MmSU5fCxc4EsA.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOlCnqEu92Fr1MmSU5fChc4EsA.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:300;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOlCnqEu92Fr1MmSU5fBBc4.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOmCnqEu92Fr1Mu72xKOzY.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOmCnqEu92Fr1Mu5mxKOzY.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOmCnqEu92Fr1Mu7mxKOzY.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOmCnqEu92Fr1Mu4WxKOzY.woff2) format('woff2');unicode-range:U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOmCnqEu92Fr1Mu7WxKOzY.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOmCnqEu92Fr1Mu7GxKOzY.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:400;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOmCnqEu92Fr1Mu4mxK.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOlCnqEu92Fr1MmEU9fCRc4EsA.woff2) format('woff2');unicode-range:U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOlCnqEu92Fr1MmEU9fABc4EsA.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOlCnqEu92Fr1MmEU9fCBc4EsA.woff2) format('woff2');unicode-range:U+1F00-1FFF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOlCnqEu92Fr1MmEU9fBxc4EsA.woff2) format('woff2');unicode-range:U+0370-0377, U+037A-037F, U+0384-038A, U+038C, U+038E-03A1, U+03A3-03FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOlCnqEu92Fr1MmEU9fCxc4EsA.woff2) format('woff2');unicode-range:U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOlCnqEu92Fr1MmEU9fChc4EsA.woff2) format('woff2');unicode-range:U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;}@font-face{font-family:'Roboto';font-style:normal;font-weight:500;font-display:swap;src:url(https://fonts.gstatic.com/s/roboto/v32/KFOlCnqEu92Fr1MmEU9fBBc4.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;}</style>
+  <style>@font-face{font-family:'Material Icons';font-style:normal;font-weight:400;src:url(https://fonts.gstatic.com/s/materialicons/v142/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');}.material-icons{font-family:'Material Icons';font-weight:normal;font-style:normal;font-size:24px;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;word-wrap:normal;direction:ltr;-webkit-font-feature-settings:'liga';-webkit-font-smoothing:antialiased;}</style>
+  <style>
+    body {
+      background-color: #1a1a1a;
+      color: #fff;
+      font-family: 'Roboto', sans-serif;
+    }
+    
+    .navbar {
+      background-color: #2a2a2a;
+      border-bottom: 2px solid #00bfff;
+    }
+
+    .navbar-brand {
+      color: #00bfff;
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .navbar-brand:hover {
+      color: #00bfff96;
+    }
+
+    .navbar-nav .nav-item .nav-link {
+      color: #fff;
+      font-size: 16px;
+      margin-right: 15px;
+    }
+
+    .navbar-nav .nav-item .nav-link:hover {
+      color: #00bfff;
+    }
+
+    .navbar-nav .nav-item .nav-link.active {
+      color: #00bfff;
+      font-weight: 600;
+    }
+
+    .navbar-toggler {
+      border-color: #00bfff;
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiI+PHBhdGggZD0iTTAgMCAxNiAxNiIgc3Ryb2tlLXdpZHRoPSIxMiIgc3Ryb2tlLWxpbmVjYXRpb24tbGF5ZXI9InJvdW5kIiBzdHJva2UtY29sb3I9IiMwMGJmZiIvPjwvc3ZnPg==");
+    }
+
+    .container {
+      padding: 20px;
+      background-color: #2a2a2a;
+      color: #fff;
+      border-radius: 10px;
+    }
+
+    .form-container, .navbar-nav .nav-item .nav-link {
+      color: #fff;
+    }
+
+    .table, .table th, .table td {
+      border: 1px solid #333;
+    }
+
+    .table thead th {
+      background-color: #00bfff;
+    }
+
+    .table tbody td {
+      background-color: #333;
+    }
+  </style>
+<link rel="stylesheet" href="styles-5INURTSO.css"><style ng-app-id="ng">.navbar-toggler-icon[_ngcontent-ng-c3128202116]{background-image:url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E")}.navbar-dark[_ngcontent-ng-c3128202116]{background-color:#343a40}.navbar-brand[_ngcontent-ng-c3128202116]{font-size:1.5rem;font-weight:700;color:#fff}.navbar-toggler[_ngcontent-ng-c3128202116]{border-color:#ffffff1a}.navbar-toggler-icon[_ngcontent-ng-c3128202116]{background-image:url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E")}.navbar-nav[_ngcontent-ng-c3128202116]   .nav-item[_ngcontent-ng-c3128202116]   .nav-link[_ngcontent-ng-c3128202116]{color:#fff;font-size:1.1rem;margin-right:1rem}.navbar-nav[_ngcontent-ng-c3128202116]   .nav-item[_ngcontent-ng-c3128202116]   .nav-link.active[_ngcontent-ng-c3128202116]{color:#ffc107}.container[_ngcontent-ng-c3128202116]{margin-top:2rem}body[_ngcontent-ng-c3128202116]{font-family:Arial,sans-serif;background-color:#f8f9fa;color:#343a40}a[_ngcontent-ng-c3128202116]{text-decoration:none}a[_ngcontent-ng-c3128202116]:hover{text-decoration:underline}@media (max-width: 992px){.navbar-nav[_ngcontent-ng-c3128202116]   .nav-item[_ngcontent-ng-c3128202116]   .nav-link[_ngcontent-ng-c3128202116]{margin-right:0;margin-bottom:.5rem}.navbar-collapse[_ngcontent-ng-c3128202116]{text-align:center}}</style><style ng-app-id="ng">.teacher-container[_ngcontent-ng-c54468457]{display:flex;flex-direction:column;gap:20px;max-width:900px;margin:auto;padding:20px;background-color:#1a1a1a;color:#fff;border-radius:20px}.form-container[_ngcontent-ng-c54468457]{background-color:#2a2a2a;padding:20px;border-radius:15px}.form-container[_ngcontent-ng-c54468457]   h1[_ngcontent-ng-c54468457], .form-container[_ngcontent-ng-c54468457]   h2[_ngcontent-ng-c54468457]{color:#00bfff;text-align:center}.input-container[_ngcontent-ng-c54468457]{display:flex;flex-direction:column;gap:15px;position:relative}.input-field[_ngcontent-ng-c54468457]{background-color:#333;color:#fff;padding:15px 10px;outline:0;border:1px solid rgba(105,105,105,.397);border-radius:10px;font-size:16px}.input-label[_ngcontent-ng-c54468457]{color:#ffffff80;position:absolute;left:15px;top:15%;transform:translateY(-50%);font-size:.9em;pointer-events:none;transition:.3s ease}.input-field[_ngcontent-ng-c54468457]:placeholder-shown + .input-label[_ngcontent-ng-c54468457]{top:35%;transform:translateY(-50%);font-size:20px}.input-field[_ngcontent-ng-c54468457]:focus + .input-label[_ngcontent-ng-c54468457], .input-field[_ngcontent-ng-c54468457]:valid + .input-label[_ngcontent-ng-c54468457]{color:#00bfff;top:0;font-size:.75em;font-weight:600}button[type=submit][_ngcontent-ng-c54468457]{border:none;outline:none;padding:12px;border-radius:10px;color:#fff;font-size:16px;background-color:#00bfff;cursor:pointer;transition:background-color .3s ease}button[type=submit][_ngcontent-ng-c54468457]:hover{background-color:#00bfff96}.teacher-table[_ngcontent-ng-c54468457]{width:100%;border-collapse:collapse;color:#fff;margin-top:20px}.teacher-table[_ngcontent-ng-c54468457]   th[_ngcontent-ng-c54468457], .teacher-table[_ngcontent-ng-c54468457]   td[_ngcontent-ng-c54468457]{padding:10px;text-align:center;border:1px solid #333}.teacher-table[_ngcontent-ng-c54468457]   th[_ngcontent-ng-c54468457]{background-color:#00bfff}.teacher-table[_ngcontent-ng-c54468457]   td[_ngcontent-ng-c54468457]{background-color:#333}.teacher-table[_ngcontent-ng-c54468457]   button[_ngcontent-ng-c54468457]{background-color:#00bfff;border:none;color:#fff;padding:5px 10px;border-radius:5px;cursor:pointer;transition:background-color .3s ease}.teacher-table[_ngcontent-ng-c54468457]   button[_ngcontent-ng-c54468457]:hover{background-color:#00bfff96}</style></head>
+<body>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <app-root _nghost-ng-c3128202116 ng-version="18.2.0" ng-server-context="ssg"><nav _ngcontent-ng-c3128202116 class="navbar navbar-expand-lg navbar-dark bg-dark"><a _ngcontent-ng-c3128202116 href="#" class="navbar-brand">Time Craft</a><button _ngcontent-ng-c3128202116 type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span _ngcontent-ng-c3128202116 class="navbar-toggler-icon"></span></button><div _ngcontent-ng-c3128202116 id="navbarNav" class="collapse navbar-collapse"><ul _ngcontent-ng-c3128202116 class="navbar-nav"><li _ngcontent-ng-c3128202116 class="nav-item"><a _ngcontent-ng-c3128202116 routerlink="/years" routerlinkactive="active" class="nav-link" href="https://kaushal5683.github.io/TTFrontendV1/years">Years</a></li><li _ngcontent-ng-c3128202116 class="nav-item"><a _ngcontent-ng-c3128202116 routerlink="/classrooms" routerlinkactive="active" class="nav-link" href="https://kaushal5683.github.io/TTFrontendV1/classrooms">Classrooms</a></li><li _ngcontent-ng-c3128202116 class="nav-item"><a _ngcontent-ng-c3128202116 routerlink="/teachers" routerlinkactive="active" class="nav-link active" href="https://kaushal5683.github.io/TTFrontendV1/teachers">Teachers</a></li><li _ngcontent-ng-c3128202116 class="nav-item"><a _ngcontent-ng-c3128202116 routerlink="/subjects" routerlinkactive="active" class="nav-link" href="https://kaushal5683.github.io/TTFrontendV1/subjects">Subjects</a></li><li _ngcontent-ng-c3128202116 class="nav-item"><a _ngcontent-ng-c3128202116 routerlink="/timetables" routerlinkactive="active" class="nav-link" href="https://kaushal5683.github.io/TTFrontendV1/timetables">Timetables</a></li></ul></div></nav><div _ngcontent-ng-c3128202116 class="container mt-4"><router-outlet _ngcontent-ng-c3128202116></router-outlet><app-teacher _nghost-ng-c54468457><div _ngcontent-ng-c54468457 class="teacher-container"><div _ngcontent-ng-c54468457 class="form-container"><h1 _ngcontent-ng-c54468457>Teachers Management</h1><form _ngcontent-ng-c54468457 novalidate class="input-container ng-untouched ng-pristine ng-invalid"><input _ngcontent-ng-c54468457 type="text" name="fullName" required class="input-field ng-untouched ng-pristine ng-invalid" value><label _ngcontent-ng-c54468457 class="input-label">Enter Full Name</label><div _ngcontent-ng-c54468457 class="input-highlight"></div><br _ngcontent-ng-c54468457><button _ngcontent-ng-c54468457 type="submit">Add</button></form></div><div _ngcontent-ng-c54468457 class="form-container"><!----></div><table _ngcontent-ng-c54468457 class="teacher-table"><thead _ngcontent-ng-c54468457><tr _ngcontent-ng-c54468457><th _ngcontent-ng-c54468457>Name</th><th _ngcontent-ng-c54468457>Actions</th></tr></thead><tbody _ngcontent-ng-c54468457><!----></tbody></table></div></app-teacher><!----></div></app-root>
+<script src="polyfills-SCHOHYNV.js" type="module"></script><script src="main-ABVKMQ2R.js" type="module"></script>
+
+</body></html>
