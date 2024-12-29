@@ -10,7 +10,7 @@ import { Year } from '../../models/year.model';
 })
 export class ClassroomComponent implements OnInit {
   classrooms: Classroom[] = [];
-  selectedClassroom: Classroom = new Classroom(0, 0, new Year(0));
+  selectedClassroom: Classroom = new Classroom(0, new Year(0),undefined);
 
   constructor(private classroomService: ClassroomService) {}
 
@@ -49,6 +49,6 @@ export class ClassroomComponent implements OnInit {
   }
 
   resetForm(): void {
-    this.selectedClassroom = new Classroom(0, 0, new Year(0));
+    this.selectedClassroom = new Classroom(0, new Year(0),undefined);
   }
 }

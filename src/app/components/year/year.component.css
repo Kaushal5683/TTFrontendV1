@@ -10,7 +10,7 @@
   border-radius: 20px;
 }
 
-h1, h2 {
+.form-container h1, .form-container h2,h2 {
   color: #00bfff;
   text-align: center;
 }
@@ -31,7 +31,6 @@ form {
   position: relative;
   display: flex;
   flex-direction: column;
-
 }
 
 .input-field {
@@ -92,7 +91,7 @@ button[type="submit"]:hover {
 .year-table {
   width: 100%;
   border-collapse: collapse;
-  color: #fff;
+  color: #ffffff;
 }
 
 .year-table th, .year-table td {
@@ -106,7 +105,7 @@ button[type="submit"]:hover {
 }
 
 .year-table td {
-  background-color: #333;
+  background-color: #282525;
 }
 
 .year-table button {

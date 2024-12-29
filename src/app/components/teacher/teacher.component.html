@@ -1,6 +1,6 @@
 <div class="teacher-container">  
   <div class="form-container">
-    <h1>Teachers Management</h1>
+    <h1>Enter Details To Add New Teachers</h1>
     <form (ngSubmit)="addTeacher()" class="input-container">
       <input type="text" [(ngModel)]="newTeacher.name" name="fullName" required class="input-field">
       <label class="input-label">Enter Full Name</label>
@@ -8,18 +8,18 @@
       <button type="submit">Add</button>
     </form>
   </div>
-
+  <form *ngIf="selectedTeacher" (ngSubmit)="updateTeacher()" class="input-container">
   <div class="form-container">
-    <form *ngIf="selectedTeacher" (ngSubmit)="updateTeacher()" class="input-container">
-    <h2>Update Teacher</h2>
-      <input type="text" [(ngModel)]="updatedTeacher.name" name="fullName" required class="input-field">
+    <h2>Update Changes To Selected Teacher</h2>
+      <input type="text" [(ngModel)]="updatedTeacher.name" name="fullName" required class="input-field" >
       <label class="input-label"></label>
       <div class="input-highlight"></div><br>
-      <button type="submit">Update</button>
-    </form>
+      <button type="submit">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Update&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</button>
   </div>
-
+</form>
+  <h2>List Of Added Teachers</h2>
   <table class="teacher-table">
+    
     <thead>
       <tr>
         <th>Name</th>

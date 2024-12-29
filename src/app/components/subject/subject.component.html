@@ -1,6 +1,6 @@
 <div class="subject-container">
   <div class="subject-form">
-    <h1>Subjects Management</h1>
+    <h1>Enter Details To Add New Subject</h1>
     <form (submit)="subjectForm.id ? updateSubject() : createSubject()">
       <div class="form-group input-container">
         <input [(ngModel)]="subjectForm.name" name="name" id="name" required class="input-field" />
@@ -31,7 +31,7 @@
       <button type="submit">{{ subjectForm.id ? 'Update' : 'Create' }} Subject</button>
     </form>
   </div>
-
+  <h2>List Of Added Subjects</h2>
   <!-- Table for displaying subjects -->
   <table class="subject-table">
     <thead>

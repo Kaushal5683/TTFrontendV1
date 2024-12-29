@@ -1,37 +1,23 @@
 <div class="classroom-container">
   <div class="form-container">
-    <h1>Create or Update Classroom</h1><br>
-    <div class="formField">
-      <label>Classroom Number</label>
-      <input
-        type="number"
-        id="classroomNumber"
-        [(ngModel)]="selectedClassroom.classroomNumber"
-        required class="input-field"
-      />
+    <h1>Enter Details To Add New Classroom</h1><br>
+    <div class="form-group">
+      <input type="number" id="classroomNumber" [(ngModel)]="selectedClassroom.classroomNumber" required class="input-field"/>
+      <label class="input-label">Enter Classroom Number</label>
       <div class="input-highlight"></div>
     </div>
 
-    <div class="formField">
-      <label>Year ID</label>
-      <input
-        type="number"
-        id="year"
-        [(ngModel)]="selectedClassroom.year.id"
-        required class="input-field"
-      />
-      
+    <div class="form-group">
+      <input type="number" id="year" [(ngModel)]="selectedClassroom.year.id" required class="input-field"/> 
+      <label class="input-label">Year ID</label>
       <div class="input-highlight"></div>
     </div><br>
-
-    <div class="button-group">
-      <button (click)="createClassroom()">Create Classroom</button>
-      <button (click)="updateClassroom()">Update Classroom</button>
-    </div>
+      <button (click)="createClassroom()" type="submit">Create Classroom</button>&nbsp;
+      <button (click)="updateClassroom()" type="submit">Update Classroom</button>
   </div>
 
   <div class="classroom-list">
-    <h2>Classrooms List</h2>
+    <h2>List Of Added Classrooms</h2>
     <table class="classroom-table">
       <thead>
         <tr>
@@ -43,7 +29,7 @@
       <tbody>
         <tr *ngFor="let classroom of classrooms">
           <td>{{ classroom.classroomNumber }}</td>
-          <td>{{ classroom.year.yearNumber }}</td>
+          <td>{{ classroom.year.id }}</td>
           <td>
               <button (click)="selectClassroom(classroom)">Edit</button>&nbsp;&nbsp;
               <button (click)="deleteClassroom(classroom.id)">Delete</button>

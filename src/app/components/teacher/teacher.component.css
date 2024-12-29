@@ -16,7 +16,7 @@
   border-radius: 15px;
 }
 
-.form-container h1, .form-container h2 {
+.form-container h1, .form-container h2 ,h2 {
   color: #00bfff;
   text-align: center;
 }

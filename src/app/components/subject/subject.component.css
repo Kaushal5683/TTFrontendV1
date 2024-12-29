@@ -10,13 +10,17 @@
   border-radius: 20px;
 }
 
+label{
+  color : rgb(0, 234, 255);
+}
+
 .subject-form {
   background-color: #2a2a2a;
   padding: 20px;
   border-radius: 15px;
 }
 
-.subject-form h1 {
+.subject-form h1,h2 {
   color: #00bfff;
   text-align: center;
 }
@@ -44,7 +48,7 @@
 }
 
 .input-label {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgb(244, 237, 237);
   position: absolute;
   left: 15px;
   top: 50%;

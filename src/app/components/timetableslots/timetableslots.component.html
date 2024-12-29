@@ -4,7 +4,7 @@
 
   <form [formGroup]="generateForm" (ngSubmit)="generateTimetable()">
     <div class="form-group">
-      <label for="yearId">Select Year</label>
+      <label for="yearId" class="label">Select Year</label>
       <select id="yearId" formControlName="yearId" class="form-control">
         <option *ngFor="let year of years" [value]="year.id">
           Year {{ year.yearNumber }}
